@@ -1,8 +1,8 @@
 print("Добро пожаловать в PyLauncher")
 
 while True:
-    pyl = int(input("введите номер программы: "))
-    if pyl == 1:
+    pyl = input("введите номер программы: ")
+    if pyl == ("1"):
         print("Запущен калькулятор")
         a = input("Выберите первое число: ")
         b = input("Выберите второе число: ")
@@ -30,13 +30,19 @@ while True:
             c = a + b
             print(c)
         elif z == "/":
-            c = a / b
-            print(c)
+            try:
+                c = a / b
+                print(c)
+            except ZeroDivisionError:
+                print("на ноль не делиться")
         elif z == "//":
-            c = a // b
-            print(c)
+            try:
+                c = a // b
+                print(c)
+            except ZeroDivisionError:
+                print("на ноль не делиться")
         elif z == "%":
-            c = a % b
+            c = a - (a * b / 100)
             print(c)
         elif z == "*":
             c = a * b
@@ -47,7 +53,7 @@ while True:
         elif "S" in z or "s" in z:
             print("Посхалко!!")
         else:
-            print('ошибка')
+            print('Не введена исполняемая операция')
     #--------------------------------------------------#
     elif pyl == 2:
         print("Сапёр: Beta")
